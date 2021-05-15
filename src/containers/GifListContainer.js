@@ -12,8 +12,8 @@ export default class GifListContainer extends Component {
         this.handleSubmit()
     }
 
-    submitHandler = () => {
-        fetch('https://api.giphy.com/v1/gifs/search?q=kittens&limit=3&api_key=dc6zaTOxFJmzC&rating=g')
+    submitHandler = (q) => {
+        fetch(`https://api.giphy.com/v1/gifs/search?q=${q}&limit=3&api_key=dc6zaTOxFJmzC&rating=g`)
         .then(res => res.json())
         .then(({data}) => {
             console.log(data)
